@@ -1,8 +1,7 @@
-//Scaffolded with React + Vite
-
 ENVI WEB BASS SYNTH
 
-//created with use of the _Web Audio API_
+Scaffolded with React + Vite
+created with use of the _Web Audio API_
 
 ## The idea
 
@@ -11,6 +10,8 @@ ENVI WEB BASS SYNTH
 - Keyboard input, midi input, (eventually create a midi sequencer for mobile accessibility)
 - User should have access to all properties of the synth displayed via knobs and sliders
 - Focus: FM/AM bass synthesis, (1-2) osc for now
+- User should be able to record, save, and send audio generated as audio file
+- eventually plan to allow the user to save and load custom patches
 
 ## The User Interface
 
@@ -35,9 +36,9 @@ ENVI WEB BASS SYNTH
   - FM
 
 - Effects:
-  - Filter (A BiquadFilterNode object instance):
-    -options: 
-        - type: 
+  - Filter:
+    - options:
+    - type:
             - lowpass 
             - highpass 
             - bandpass 
@@ -54,6 +55,7 @@ ENVI WEB BASS SYNTH
                   - lowshelf
                   - highshelf
                   - peaking
+
     - WaveShaper:
         - non-linear distorter. used to add a warm feeling to the signal.
     - DynamicsCompressor

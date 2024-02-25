@@ -1,35 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { FaPlusSquare, FaLock, FaMinusSquare } from "react-icons/fa";
+
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main>
+      <heading className="header">
+        <h1>ENVI BASS SYNTH</h1>
+      </heading>
+      <section className="top">
+        <div className="XY-wrapper"></div>
+        <div className="lock-note-wrapper">
+          <FaPlusSquare />
+          <FaLock />
+          <FaMinusSquare />
+        </div>
+      </section>
+      <section className="OSCs-wrapper">
+        <div className="osc" id="OSC1">
+          <h3 className="osc-title">OSC 1</h3>
+          <button className="toggle"></button>
+        </div>
+        <div className="osc" id="OSC2">
+          <h3 className="osc-title">OSC 2</h3>
+          <button className="toggle"></button>
+        </div>
+      </section>
+      <section className="env-and-effects-wrapper">
+        <div className="env-and-effects-nav">
+          <h4 className="env-title">Envelope</h4>
+          <h4 className="effects-title">Effects</h4>
+        </div>
+        <div className="envelope-wrapper">
+          <div>
+            <p>A</p> <input type="range" className="adsr"></input>
+          </div>
+          <div>
+            <p>D</p> <input type="range" className="adsr"></input>
+          </div>
+          <div>
+            <p>S</p> <input type="range" className="adsr"></input>
+          </div>
+          <div>
+            <p>R</p> <input type="range" className="adsr"></input>
+          </div>
+        </div>
+        <div className="effects-nav-wrapper">
+          <div className="effects-items">
+            <div className="effect">
+              <input type="checkbox" />
+              <h5 className="effect-title">AM/FM</h5>
+            </div>
+            <div className="effect">
+              <input type="checkbox" />
+              <h5 className="effect-title">Filter</h5>
+            </div>
+            <div className="effect">
+              <input type="checkbox" />
+              <h5 className="effect-title">Distortion</h5>
+            </div>
+            <div className="effect">
+              <input type="checkbox" />
+              <h5 className="effect-title">Compressor</h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }
 
-export default App
+export default App;
